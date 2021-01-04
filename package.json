@@ -1,0 +1,19 @@
+{
+  "name": "teste-banco-original-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ulissestb/teste-banco-original-node.git"
+  },
+  "author": "Ulisses Nascimento",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ulissestb/teste-banco-original-node/issues"
+  },
+  "homepage": "https://github.com/ulissestb/teste-banco-original-node#readme"
+}
