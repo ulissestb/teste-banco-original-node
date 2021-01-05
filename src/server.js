@@ -1,6 +1,8 @@
 const express = require('express')
 const swaggerJSDoc = require('swagger-jsdoc')
 const swaggerUI = require('swagger-ui-express')
+require('./database/index')
+const routes = require('./routes')
 
 const server = express()
 
@@ -20,6 +22,6 @@ const swaggerDocs = swaggerJSDoc(swaggerOptions)
 
 
 server.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs))
-
 server.use(express.json())
+server.use(routes)
 server.listen(3333)
