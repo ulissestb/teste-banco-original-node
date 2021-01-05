@@ -3,6 +3,8 @@ const ClienteController = require('./controllers/ClienteController')
 
 const routes = express.Router()
 
-routes.post('/clientes', ClienteController.cadastrarCliente)
+routes.post('/cliente', ClienteController.cadastrarCliente)
+
+routes.post('/email', ClienteController.buscarClientePorEmail)
 
 module.exports = routes

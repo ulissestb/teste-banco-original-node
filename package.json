@@ -18,13 +18,14 @@
   },
   "homepage": "https://github.com/ulissestb/teste-banco-original-node#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.6",
     "path": "^0.12.7",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0",
-    "swagger-jsdoc": "^6.0.0",
-    "swagger-ui-express": "^4.1.6"
+    "swagger-ui-express": "^4.1.6",
+    "yamljs": "^0.3.0"
   }
 }
