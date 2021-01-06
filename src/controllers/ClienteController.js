@@ -41,9 +41,13 @@ module.exports = {
     },
     buscarClientePorEmail(req, res){
         const { email } = req.body
-        Cliente.findAll({where: { "email": email}, include: {association: 'endereco'}})
-            .then((response)=> {
-                return res.status(200).json(response)
-            })
+        if(validaEmail(email)){
+            Cliente.findAll({where: { "email": email}, include: {association: 'endereco'}})
+                .then((response)=> {
+                    return res.status(200).json(response)
+                })
+        }else{
+            return res.status(400).json({'message': 'Insira um e-mail válido'})
+        }
     }
 }
