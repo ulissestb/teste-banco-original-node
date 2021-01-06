@@ -27,8 +27,6 @@ module.exports = {
                 }else{
                     return response.status(400).json({'Error': 'O cep é invalido'})
                 }
-            }).catch((err)=>{
-
             })
     },
     buscarClientePorEmail(req, res){
