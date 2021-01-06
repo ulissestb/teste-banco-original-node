@@ -21,7 +21,7 @@ module.exports = {
                         endereco = await Endereco.create({ cliente_id, cep, logradouro, bairro, localidade, uf})
                     } catch (errr) {
                         Cliente.destroy({where: {'id': cliente.dataValues.id}})
-                        return response.status(400).json({'Error': 'Endereço existente'})
+                        return response.status(400).json({'Error': 'Ocorreu um erro ao salvar o endereço'})
                     }
                     return response.status(201).json({cliente, endereco})
                 }else{

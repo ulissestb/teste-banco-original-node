@@ -19,7 +19,6 @@ module.exports = {
       cep: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true
       },
       logradouro: { 
         type: Sequelize.STRING,
