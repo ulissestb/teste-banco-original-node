@@ -13,20 +13,33 @@ paths:
         - "application/json"
       produces:
         - "application/json"
-      parameters:
-      - in: "body"
-        name: "Cliente"
-        description: "Inserir o Cliente a ser adicionado"
-        required: true
-        schema: 
-          $ref: "#/definitions/Cliente"
+      requestBody: 
+        content:
+          application/json:
+            schema:
+              $ref: "#/definitions/Cliente"
       responses:
-        "405":
-          description: "Invalid input"
+        '201':
+          description: Created
+        '400':
+          description: Bad request
   /email:
     post:
       summary: Busca um cliente por e-mail
       description: Realiza uma busca no banco de dados pelo e-mail do usuário cadastrado
+      operationId: "searchCliente"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody: 
+        content:
+          application/json:
+            schema:
+              $ref: "#/definitions/email"
+      responses:
+        '200':
+          description: OK
 
 definitions:
   Cliente:
@@ -39,6 +52,11 @@ definitions:
       nome:
         type: "string"
       cep:
+        type: "string"
+  email: 
+    type: "object"
+    properties:
+      email:
         type: "string"
         
 

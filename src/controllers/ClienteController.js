@@ -34,8 +34,8 @@ module.exports = {
     buscarClientePorEmail(req, res){
         const { email } = req.body
         Cliente.findAll({where: { "email": email}, include: {association: 'endereco'}})
-            .then(async (response)=> {
-                return res.json(response)
+            .then((response)=> {
+                return res.status(200).json(response)
             })
     }
 }
