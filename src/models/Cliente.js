@@ -8,18 +8,17 @@ class Cliente extends Model {
             },
             email: { 
                 type: DataTypes.STRING,
-                
             },
             nome: {
                 type: DataTypes.STRING
             },
-            cep: {
-                type: DataTypes.STRING
-            }
         }, {
             sequelize,
             tableName: 'clientes'
         })
+    }
+    static associate(models){
+        this.hasOne(models.Endereco, {foreignKey: 'cliente_id', as: 'endereco'})
     }
 }
 

@@ -1,4 +1,5 @@
 'use strict';
+const Endereco = require('../../models/Endereco')
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -19,9 +20,6 @@ module.exports = {
           unique: true
       },
       nome: {
-          type: Sequelize.STRING
-      },
-      cep: {
           type: Sequelize.STRING
       },
       createdAt: {
