@@ -1,6 +1,10 @@
 # Desafio Banco Original
 Este projeto é um desafio proposto pelo banco original em seu processo seletivo.
 Para instalar o projeto, você precisará ter instalado na sua máquina: Docker e nodejs.
+
+## Observação
+Este projeto utiliza uma API de busca de  CEP no repositório: https://github.com/ulissestb/teste-banco-original
+É de extrema importância ter a API rodando para que funcione a busca de CEP neste projeto.
   
 ## Inicialização
   
