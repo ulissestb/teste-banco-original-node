@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  title: Teste Banco Original API
+  version: 1.0.0
+host: "localhost:3333"
+paths:
+  /cliente:
+    post:
+      summary: Cadastrar cliente
+      description: Cadastra um cliente com CPF e Email unicos no banco de dados
+      operationId: "addCliente"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody: 
+        content:
+          application/json:
+            schema:
+              $ref: "#/definitions/Cliente"
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad request
+  /email:
+    post:
+      summary: Busca um cliente por e-mail
+      description: Realiza uma busca no banco de dados pelo e-mail do usuário cadastrado
+      operationId: "searchCliente"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      requestBody: 
+        content:
+          application/json:
+            schema:
+              $ref: "#/definitions/email"
+      responses:
+        '200':
+          description: OK
+
+definitions:
+  Cliente:
+    type: "object"
+    properties:
+      cpf:
+        type: "string"
+      email:
+        type: "string"
+      nome:
+        type: "string"
+      cep:
+        type: "string"
+  email: 
+    type: "object"
+    properties:
+      email:
+        type: "string"
+        
+
